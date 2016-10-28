@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
     if (err) throw err;
 
-    res.render('index', { title: 'rows[0].solution' });
+    res.render('index', { title: rows[0].solution });
   });
 
   connection.end();
