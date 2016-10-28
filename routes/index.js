@@ -7,7 +7,7 @@ var connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
 /* GET home page. */
 router.get('/', function(req, res, next) {
   connection.connect();
-  connection.query('USE test', function(err, rows, fields) {
+  connection.query('USE wr3ebr34bm2zelni', function(err, rows, fields) {
     if (err) throw err;
   });
 
