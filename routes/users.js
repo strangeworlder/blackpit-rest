@@ -9,7 +9,6 @@ var connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
 router.get('/userlist', function(req, res) {
   connection.query('SELECT name FROM test', function(err, rows, fields) {
     if (err) throw err;
-     {
               console.log('Connection result error '+err);
               console.log('no of records is '+rows.length);
                       response.writeHead(200, { 'Content-Type': 'application/json'});
