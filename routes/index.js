@@ -8,7 +8,7 @@ var connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
 router.get('/', function(req, res, next) {
   connection.connect();
 
-  connection.query('SELECT name FROM TEST', function(err, rows, fields) {
+  connection.query('SELECT name FROM test', function(err, rows, fields) {
     if (err) throw err;
 
     res.render('index', { title: rows[0].solution });
