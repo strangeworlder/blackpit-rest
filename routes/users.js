@@ -15,9 +15,10 @@ router.get('/', function(req, res) {
       LEFT JOIN sarjataulukkodata b
           ON m.team_id = b.team_id
           AND m.kierros_id < b.kierros_id
-          AND season_id = 1
+          AND b.season_id = 1
   WHERE b.kierros_id IS NULL
-  AND season_id = 1
+  AND m.season_id = 1
+  ORDER BY m.team_id
 
   ', function(err, rows, fields) {
       console.log('Connection result error '+err);
@@ -37,9 +38,10 @@ router.get('/2016', function(req, res) {
       LEFT JOIN sarjataulukkodata b
           ON m.team_id = b.team_id
           AND m.kierros_id < b.kierros_id
-          AND season_id = 1
+          AND b.season_id = 1
   WHERE b.kierros_id IS NULL
-  AND season_id = 1
+  AND m.season_id = 1
+  ORDER BY m.team_id
 ', function(err, rows, fields) {
       console.log('Connection result error '+err);
       if (err) throw err;
