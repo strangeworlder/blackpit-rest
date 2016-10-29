@@ -18,9 +18,18 @@ router.get('/', function(req, res) {
       res.json(rows);
 
       });
+});
+router.get('/2016', function(req, res) {
 
+  db.query('SELECT * FROM sarjataulukkodata WHERE season_id=1', function(err, rows, fields) {
+      console.log('Connection result error '+err);
+      if (err) throw err;
 
+      console.log('Connection result error '+err);
+      console.log('no of records is '+rows.length);
+      res.json(rows);
 
+      });
 });
 
 module.exports = router;
