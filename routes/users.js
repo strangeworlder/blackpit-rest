@@ -8,7 +8,6 @@ var db = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
  * GET userlist.
  */
 router.get('/', function(req, res) {
-  db.connect();
 
   db.query('SELECT * FROM sarjataulukkodata', function(err, rows, fields) {
       console.log('Connection result error '+err);
@@ -20,7 +19,6 @@ router.get('/', function(req, res) {
 
       });
 
-  db.end();
 
 
 });
