@@ -19,8 +19,8 @@ router.get('/', function(req, res) {
 
       });
 });
-router.get('/2016/:kierros_id', function(req, res) {
-  var kierros = req.params(kierros_id).parseInt();
+router.get('/2016/:kierrosId', function(req, res) {
+  var kierros = req.params.kierrosId.parseInt();
   res.send(req.params);
 });
 
