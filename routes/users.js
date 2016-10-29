@@ -19,8 +19,8 @@ router.get('/', function(req, res) {
 
       });
 });
-router.get('/2016', function(req, res) {
-
+router.get('/2016/:kierros_id', function(req, res) {
+  var kierros = req.params(kierros_id).parseInt();
   db.query('SELECT m.* FROM sarjataulukkodata m LEFT JOIN sarjataulukkodata b ON m.team_id = b.team_id AND m.kierros_id < b.kierros_id AND b.season_id = 1 WHERE b.kierros_id IS NULL AND m.season_id = 1 ORDER BY m.team_id', function(err, rows, fields) {
       console.log('Connection result error '+err);
       if (err) throw err;
