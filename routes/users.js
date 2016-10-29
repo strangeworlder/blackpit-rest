@@ -28,7 +28,7 @@ router.get('/2016/:kierrosId', function(req, res) {
   var kierros = 0;
   kierros = kierros + parseInt(req.param('kierrosId')) + 1;
 
-  res.send(kierros);
+  res.send(1);
 });
 
 module.exports = router;
