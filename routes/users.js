@@ -13,8 +13,7 @@ router.get('/', function(req, res) {
     if (err) throw err;
               console.log('Connection result error '+err);
               console.log('no of records is '+rows.length);
-              res.writeHead(200, { 'Content-Type': 'application/json'});
-              res.end(JSON.stringify(rows));
+
       });
 
       db.end();
