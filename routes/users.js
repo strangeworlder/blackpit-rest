@@ -10,7 +10,7 @@ var db = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
 router.get('/', function(req, res) {
   db.connect();
 
-  db.query('SELECT name FROM test', function(err, rows, fields) {
+  db.query('SELECT * FROM sarjataulukkodata', function(err, rows, fields) {
     if (err) throw err;
               console.log('Connection result error '+err);
               console.log('no of records is '+rows.length);
