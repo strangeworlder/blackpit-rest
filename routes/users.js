@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var db = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
 
 
 /*
