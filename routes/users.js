@@ -11,14 +11,16 @@ router.get('/', function(req, res) {
   db.connect();
 
   db.query('SELECT * FROM sarjataulukkodata', function(err, rows, fields) {
-    if (err) throw err;
-              console.log('Connection result error '+err);
-              console.log('no of records is '+rows.length);
-              res.json(rows);
+      console.log('Connection result error '+err);
+      if (err) throw err;
+
+      console.log('Connection result error '+err);
+      console.log('no of records is '+rows.length);
+      res.json(rows);
 
       });
 
-      db.end();
+  db.end();
 
 
 });
