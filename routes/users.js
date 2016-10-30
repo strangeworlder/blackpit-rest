@@ -31,7 +31,10 @@ router.get('/2016/:kierrosId', function(req, res) {
   db.query(sql, function(err, rows, fields) {
       console.log('Connection result error '+err);
       if (err) throw err;
-
+      var i = 0;
+      rows.forEach(function(element) {
+          element['ranking'] = i++;
+      });
       console.log('Connection result error '+err);
       console.log('no of records is '+rows.length);
       res.json(rows);
