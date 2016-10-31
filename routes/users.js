@@ -14,7 +14,7 @@ function stripAlphaChars(source) {
  */
 router.get('/', function(req, res) {
 
-  var sql = 'SELECT m.* FROM sarjataulukkodata m '+
+  var sql = 'SELECT m.team_id as team_id, m.series_id, m.season_id, m.kierros_id, j.teamName, j.teamNameShort, m.voitot, m.tasan, m.haviot, m.tdf, m.tda, m.casf, m.casa, m.tr, m.MISS FROM sarjataulukkodata m '+
               'LEFT JOIN joukkuedata j '+
               'ON m.team_id = j.team_id AND m.kierros_id = j.kierros_id AND j.season_id = m.season_id AND j.series_id = m.series_id '+
               'LEFT JOIN sarjataulukkodata b '+
